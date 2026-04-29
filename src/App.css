@@ -1,0 +1,309 @@
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background: #07111f;
+  color: #e8f2ff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 211, 67, 0.18), transparent 16rem),
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 32rem),
+    linear-gradient(135deg, #07111f 0%, #10233f 55%, #152033 100%);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(16px);
+  background: rgba(7, 17, 31, 0.78);
+  z-index: 2;
+}
+
+.brand,
+.topnav,
+.hero-actions,
+.lesson-card-meta,
+.practice-actions,
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 0.8rem;
+  background: #ffd343;
+  color: #1f2937;
+}
+
+.topnav a {
+  color: #bfdbfe;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.page {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.hero-card,
+.panel,
+.lesson-card,
+.quiz-card,
+.practice-workspace,
+.course-section {
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.panel,
+.course-section {
+  margin-top: 1.25rem;
+}
+
+.lesson-card,
+.quiz-card,
+.panel {
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.lesson-card:hover,
+.quiz-card:hover,
+.panel:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 211, 67, 0.42);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card {
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  margin: 0.5rem 0 1rem;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.hero-copy {
+  font-size: 1.5rem;
+  color: #bae6fd;
+  font-weight: 800;
+}
+
+.eyebrow {
+  color: #facc15;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 900;
+}
+
+.primary-button,
+.secondary-button,
+button,
+.lesson-card a {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #ffd343;
+  color: #111827;
+}
+
+.inline-button {
+  justify-self: start;
+  width: fit-content;
+}
+
+.field-label {
+  display: block;
+  margin: 1rem 0 0.45rem;
+  color: #dbeafe;
+  font-weight: 900;
+}
+
+.backup-panel {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.backup-editor {
+  min-height: 8rem;
+}
+
+.status-message {
+  color: #86efac;
+  font-weight: 800;
+}
+
+.secondary-button,
+button,
+.lesson-card a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0f2fe;
+}
+
+.page-heading {
+  margin-bottom: 1.25rem;
+}
+
+.page-heading h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.lesson-grid,
+.quiz-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.lesson-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.status {
+  color: #93c5fd;
+}
+
+.status.complete,
+.feedback.success {
+  color: #86efac;
+}
+
+.choice-grid,
+.practice-selector-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.practice-selector {
+  margin-bottom: 1rem;
+}
+
+.practice-selector-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.choice-grid button,
+.exercise-tab {
+  text-align: left;
+}
+
+.exercise-tab {
+  display: grid;
+  gap: 0.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.exercise-tab small {
+  color: #86efac;
+}
+
+.choice-grid .selected,
+.exercise-tab.selected {
+  outline: 2px solid #ffd343;
+  background: rgba(255, 211, 67, 0.16);
+}
+
+.progress {
+  width: 100%;
+  height: 0.8rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd343, #38bdf8);
+}
+
+.practice-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+}
+
+.editor-label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 900;
+}
+
+textarea {
+  min-height: 24rem;
+  resize: vertical;
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 1rem;
+  background: #020617;
+  color: #d1fae5;
+  font: 0.95rem/1.5 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.check-list,
+.hint-list {
+  color: #c7d2fe;
+}
+
+@media (max-width: 760px) {
+  .topbar,
+  .hero-actions,
+  .practice-actions,
+  .section-title-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .topnav {
+    flex-wrap: wrap;
+  }
+
+  .practice-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  textarea {
+    min-height: 16rem;
+  }
+}
